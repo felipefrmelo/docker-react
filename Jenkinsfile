@@ -1,6 +1,6 @@
 
-node {
 
+node 
     def app
 
     stage('Clone repository') {
@@ -20,5 +20,3 @@ node {
         sh 'docker run --name=dockerreact_v1 -d -p 3000:3000  dockerreact_v1 npm run test'
     }
 
-    
-}
