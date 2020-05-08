@@ -11,7 +11,7 @@ node {
          sh ' docker rm -f $(docker ps -a -f name=dockerreact_v1 -q)'
     }
 
-    stage('Build image test') {
+    stage('Build image tesoit') {
         app = docker.build("dockerreact_v1","-f Dockerfile.dev .")
        
     }   
