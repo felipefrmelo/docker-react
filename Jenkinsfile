@@ -16,7 +16,7 @@ node {
 
     stage("deploy"){
         steps{
-            echo "====++++executing deploy++++===="
+            echo "====++++executings deploy++++===="
         }
         post{
             always{
