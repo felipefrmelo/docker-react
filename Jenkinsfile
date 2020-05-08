@@ -6,22 +6,7 @@ node {
     }
 
     stage("delete container"){
-        steps{
-            echo "====++++executing delete container++++===="
-        }
-        post{
-            always{
-                echo "====++++always++++===="
-                'sh docker rm -f $(docker ps -a -f name=dockerreact_v1 -q)'
-            }
-            success{
-                echo "====++++delete container executed successfully++++===="
-            }
-            failure{
-                echo "====++++delete container execution failed++++===="
-            }
-    
-        }
+         sh ' docker rm -f $(docker ps -a -f name=dockerreact_v1 -q)'
     }
 
     stage('Build image') {
