@@ -1,4 +1,5 @@
 node {
+
     def app
 
     stage('Clone repository') {
@@ -19,8 +20,6 @@ node {
     }
 
     stage("deploy"){
-     
         echo "ok"
-        }
     }
 }
