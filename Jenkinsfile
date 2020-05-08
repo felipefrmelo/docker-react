@@ -15,7 +15,7 @@ node {
     }   
 
     stage('test image') {
-        sh 'docker run --name=dockerreact_v1 -d --rm dockerreact_v1 npm run test'
+        sh 'docker run CI=true --name=dockerreact_v1  dockerreact_v1 npm run test'
         sh ' docker rm -f $(docker ps -a -f name=dockerreact_v1 -q)'
     }
 
