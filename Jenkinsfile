@@ -18,7 +18,7 @@ node {
 
     stage('test image') {
         sh 'docker run --name=dockerreact_v1 -d --rm dockerreact_v1 npm run test'
-        app.remove()
+        sh 'docker rm -f $(docker ps -a -q -f name=dockerreact_v1)'
     }
 
     stage('deploy') {
