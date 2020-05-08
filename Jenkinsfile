@@ -17,7 +17,13 @@ node {
     }   
 
     stage('test image') {
-        sh 'docker run --name=dockerreact_v1 -d -p 3000:3000  dockerreact_v1 npm run test'
+        sh 'docker run --name=dockerreact_v1  dockerreact_v1 npm run test'
+    }
+
+    stage('deploy') {
+        app2 = docker.build('react-app')
+
+        sh 'docker run --name=dockerreact_v1 -p 3000:80 dockerreact_v1'
     }
 
     
