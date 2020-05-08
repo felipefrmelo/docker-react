@@ -5,10 +5,11 @@ node {
         checkout scm
     }
 
+    
 
     stage('Build image') {
-        app = docker.build("dockerreact_v1")
-    }
+        app = docker.build("dockerreact_v1","-f Dockerfile.dev .")
+    }   
 
     stage('Deploy') {
         sh 'docker run --name=dockerreact_v1 -d -p 3000:3000 -p 8081:8081 dockerreact_v1'
